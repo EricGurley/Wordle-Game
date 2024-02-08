@@ -71,8 +71,8 @@ class wordle_game {
 
 
         Random random = new Random();
-        int index = random.nextInt(word_bank.length);   // Selects a random word from the word bank
-        String answer = (word_bank[index]);        // Initializing the answer to the randomly chosen word
+        int index = random.nextInt(word_bank.length);    // Selects a random word from the word bank
+        String answer = (word_bank[index]);              // Initializing the answer to the randomly chosen word
         System.out.println(answer);
 
 
