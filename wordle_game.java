@@ -8,6 +8,16 @@ import java.util.Scanner;
 class wordle_game {
     public static void main(String[] args) {
 
+        // These constants give texts color
+        final String DEFAULT = "\u001B[0m";
+        final String GREEN = "\u001B[32m";
+        final String YELLOW = "\u001B[33m";
+        final String RED = "\u001B[31m";
+
+        
+        // Test print statement
+        // System.out.println(YELLOW + "This text is yellow!" + DEFAULT);
+
         
         String[] word_bank = {  "Night", "Eagle", "Alien", "Otter", "Venom", "Snake",
                                 "Prank", "Happy", "Tiger", "Silly", "Queen", "Zebra", 
