@@ -1,5 +1,5 @@
 // CSE 1325 Team Project
-// Writers: Eric Gurley, Jace Malone, Brian Villegas, Atoosa Karafi
+// Writers: Eric Gurley, Jace Malone, Brian Villegas, Atoosa Karami
 
 
 import java.util.Random;
