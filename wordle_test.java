@@ -44,6 +44,9 @@ class WordleTest{
 		 * Compares user's string, guess, with a second string, secretWord
 		 * Returns an array of strings that has one colored character per index
 		 */
+
+		guess = guess.toUpperCase();
+		secretWord = secretWord.toUpperCase();
 		
 		//Gives us ASCII keywords for adding colors
 		final String DEFAULT = "\u001B[0m";
