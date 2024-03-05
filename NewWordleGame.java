@@ -91,7 +91,7 @@ class NewWordleGame{
                 break;
             }
         }
-		System.out.println("You lost!!!");
+		System.out.println("You lost!!! The word was " + secretWord + "!!!");
         //TO-DO: print success if the correct word was found
         //print fail if the correct word was not found
         //maybe ask to play again?
