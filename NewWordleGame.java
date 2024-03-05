@@ -6,9 +6,7 @@ class NewWordleGame{
 		
 		//Gives us ASCII keywords for adding colors
 		final String DEFAULT = "\u001B[0m";
-		final String GREEN = "\u001B[32m";
-		final String YELLOW = "\u001B[33m";
-		final String RED = "\u001B[31m";
+		final String BLUE = "\u001B[38;5;51m";
 		
 		//initializes a word bank
 		String[] word_bank = {  "Night", "Eagle", "Alien", "Otter", "Venom", "Snake",
@@ -65,7 +63,7 @@ class NewWordleGame{
         int index = random.nextInt(word_bank.length);    // Selects a random word from the word bank
         String secretWord = (word_bank[index]); // Initializing the answer to the randomly chosen word
         secretWord = secretWord.toUpperCase();
-		// System.out.println(secretWord);	// Shows the answer to help with debugging
+		System.out.println(secretWord);	// Shows the answer to help with debugging
 
         //initializes a grid
         String[][] grid = {{"_","_","_","_","_"},{"_","_","_","_","_"},{"_","_","_","_","_"},{"_","_","_","_","_"},{"_","_","_","_","_"},{"_","_","_","_","_"}};
@@ -88,7 +86,7 @@ class NewWordleGame{
         	}
         	System.out.println("");
 			if (guess.equals(secretWord) == true) {
-				System.out.println("Congratulations!!!");
+				System.out.println(BLUE + "CONGRATULATIONS!!!\n" + DEFAULT);
                 break;
             }
 			if (guess.equals(secretWord) == false && i == 5) {
