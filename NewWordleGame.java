@@ -76,10 +76,6 @@ class NewWordleGame{
 			guess = guess.toUpperCase();
 
         	String[] colorCoded = checkWord(guess, secretWord);
-			if (guess.equals(secretWord) == true) {
-				System.out.println("Congratulations!!!");
-                break;
-            }
         	grid[i] = colorCoded;
         	//this may be replaced by a 2D array print function if we make one
         	for(int j = 0; j < 6; j++) {
@@ -90,7 +86,12 @@ class NewWordleGame{
         		//TO-DO: check if the word is correct and exit the loop if it is
         	}
         	System.out.println("");
+			if (guess.equals(secretWord) == true) {
+				System.out.println("Congratulations!!!");
+                break;
+            }
         }
+		System.out.println("You lost!!!");
         //TO-DO: print success if the correct word was found
         //print fail if the correct word was not found
         //maybe ask to play again?
