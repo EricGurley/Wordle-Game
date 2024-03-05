@@ -6,8 +6,9 @@ class WordleTest{
 		//runs checkWord with str and test word, "hello"
 		//prints the color coded word
 
+		String word = "hello";
 		String str = getWord();
-		String[] colorCoded = checkWord(str, "hello");
+		String[] colorCoded = checkWord(str, word);
 
 		for(int i = 0; i < 5; i++){
 			System.out.print(colorCoded[i]);
@@ -26,6 +27,7 @@ class WordleTest{
 		System.out.print("Please enter a 5 letter word: ");
 
 		//While loop tests if the word is valid and loops until a valid word is chosen
+		input.close();
 		while(!isValid){
 			current = input.next();
 
@@ -39,14 +41,18 @@ class WordleTest{
 		return "Failed to select word";
 	}
 
-	public static String[] checkWord(String guess, String secretWord){
+	public static String[] checkWord(String guess, String word){
 		/*
 		 * Compares user's string, guess, with a second string, secretWord
 		 * Returns an array of strings that has one colored character per index
 		 */
 
 		guess = guess.toUpperCase();
-		secretWord = secretWord.toUpperCase();
+		word = word.toUpperCase();
+		char[] secretWord = new char[5];
+		for(int i = 0; i < 5; i++){
+			secretWord[i] = word.charAt(i);
+		}
 		
 		//Gives us ASCII keywords for adding colors
 		final String DEFAULT = "\u001B[0m";
@@ -58,22 +64,42 @@ class WordleTest{
 		char char1;
 		char char2;
 		String[] results = new String[5];
-
-		//compares one letter at a time
+		
+		/*
+		checking for green letters first and
+		replacing those characters with '_'
+		is necessary to avoid a bug for the following case
+		secretWord: STAIR
+		guess: STATS
+		*/
+		
+		//checks if a letter is in the correct spot
 		for(int currentIdx = 0; currentIdx < 5; currentIdx++){
 			char1 = guess.charAt(currentIdx);
-			char2 = secretWord.charAt(currentIdx);
+			char2 = secretWord[currentIdx];
 
-			//checks if letter should be green
+			//checks if letter should be green and sets the color accordingly
 			if(char1 == char2){
 				results[currentIdx] = (GREEN + char1 + DEFAULT);
+				secretWord[currentIdx] = ' ';
+				continue;
+			}
+		}
+
+		//compares one letter at a time and sets it to yellow or red
+		for(int currentIdx = 0; currentIdx < 5; currentIdx++){
+			char1 = guess.charAt(currentIdx);
+			char2 = secretWord[currentIdx];
+			
+			//safety case to ensure green letters are not set to red
+			if(secretWord[currentIdx] == ' ') {
 				continue;
 			}
 
-			//checks if letter should be yellow
+			//checks if letter should be yellow and sets the color accordingly
 			for(int i = 0; i < 5; i++){
 				char1 = guess.charAt(currentIdx);
-				char2 = secretWord.charAt(i);
+				char2 = secretWord[i];
 				if(char1 == char2){
 					results[currentIdx] = (YELLOW + char1 + DEFAULT);
 					break;
