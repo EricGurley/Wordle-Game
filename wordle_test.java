@@ -27,7 +27,6 @@ class WordleTest{
 		System.out.print("Please enter a 5 letter word: ");
 
 		//While loop tests if the word is valid and loops until a valid word is chosen
-		input.close();
 		while(!isValid){
 			current = input.next();
 
@@ -36,8 +35,10 @@ class WordleTest{
 				continue;
 			}
 			isValid = true;
+			input.close();
 			return current;
 		}
+		input.close();
 		return "Failed to select word";
 	}
 
