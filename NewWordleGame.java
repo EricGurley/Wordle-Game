@@ -63,7 +63,7 @@ class NewWordleGame{
         int index = random.nextInt(word_bank.length);    // Selects a random word from the word bank
         String secretWord = (word_bank[index]); // Initializing the answer to the randomly chosen word
         secretWord = secretWord.toUpperCase();
-		System.out.println(secretWord);	// Shows the answer to help with debugging
+	// System.out.println(secretWord);	// Shows the answer to help with debugging
 
         //initializes a grid
         String[][] grid = {{"_","_","_","_","_"},{"_","_","_","_","_"},{"_","_","_","_","_"},{"_","_","_","_","_"},{"_","_","_","_","_"},{"_","_","_","_","_"}};
