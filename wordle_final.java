@@ -83,7 +83,7 @@ public class wordle_final {
 		    else{
 			    System.out.println("Not a valid entry. Try again.");
 		    }
-			        	        
+			       	        
 			//initializes a grid
 			String[][] grid = {{"_","_","_","_","_"},{"_","_","_","_","_"},{"_","_","_","_","_"},{"_","_","_","_","_"},{"_","_","_","_","_"},{"_","_","_","_","_"}};
 			        	
