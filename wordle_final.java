@@ -119,9 +119,7 @@ public class wordle_final {
 		public static String RandomLetter(String word, int numOfRevealedLetters) { //parameters are secret word and  number of revealed letters corresponding to difficulty level
 			Random random = new Random(5); //seed value is 5 to ensure same sequence of each playthrough is consistent
 			int wordLength = word.length();
-//			if (wordLength == 0) {
-//		        return ""; // Return an empty string if the word is empty
-//		    }
+
 
 	        // get a random index within the length of the string
 	        int randomLetterIndex = random.nextInt(word.length());
