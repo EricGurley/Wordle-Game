@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.Random;
 import java.lang.String;
 
-public class NewWordleGame2Updated {
+public class wordle_final {
 
 	public static void main(String[] args) {
 		//Gives us ASCII keywords for adding colors
@@ -187,9 +187,9 @@ public class NewWordleGame2Updated {
 				
 				//Gives us ASCII keywords for adding colors
 				final String DEFAULT = "\u001B[0m";
-		        	final String GREEN = "\u001B[32m";
-		        	final String YELLOW = "\u001B[33m";
-		        	final String RED = "\u001B[31m";
+		        final String GREEN = "\u001B[32m";
+		        final String YELLOW = "\u001B[33m";
+		        final String RED = "\u001B[31m";
 
 				//declares all necessary method variables
 				char char1;
