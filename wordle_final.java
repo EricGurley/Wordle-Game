@@ -92,8 +92,11 @@ public class wordle_final {
 			Boolean win = false;
 
 			for(int i = 0; i < 6; i++) {
+
 			    guess = getWord(word_bank);
-			    guess = guess.toUpperCase();  		
+			    guess = guess.toUpperCase();
+				
+				System.out.println("");
                 makeGrid(guess, secretWord, grid, i);
 
 				if (guess.equals(secretWord) == true) {
@@ -116,7 +119,8 @@ public class wordle_final {
 		}
 		input.close();
 	}
-		public static String RandomLetter(String word, int numOfRevealedLetters) { //parameters are secret word and  number of revealed letters corresponding to difficulty level
+
+	public static String RandomLetter(String word, int numOfRevealedLetters) { //parameters are secret word and  number of revealed letters corresponding to difficulty level
 			Random random = new Random(5); //seed value is 5 to ensure same sequence of each playthrough is consistent
 			int wordLength = word.length();
 //			if (wordLength == 0) {
@@ -144,7 +148,7 @@ public class wordle_final {
 			return revealedLetters.toString().toUpperCase();
 		}
 		
-			public static String getWord(String[] wordBank){
+	public static String getWord(String[] wordBank){
 				/*
 				 *Asks the user for a string with 5 characters
 				 *The user will be prompted until a valid word is chosen
@@ -172,7 +176,7 @@ public class wordle_final {
 				return "Failed to select word";
 			}
 
-			public static String[] checkWord(String guess, String word){
+	public static String[] checkWord(String guess, String word){
 				/*
 				 * Compares user's string, guess, with a second string, secretWord
 				 * Returns an array of strings that has one colored character per index
@@ -189,7 +193,7 @@ public class wordle_final {
 				final String DEFAULT = "\u001B[0m";
 		        final String GREEN = "\u001B[32m";
 		        final String YELLOW = "\u001B[33m";
-		        final String RED = "\u001B[31m";
+		        	final String RED = "\u001B[31m";
 
 				//declares all necessary method variables
 				char char1;
@@ -246,16 +250,16 @@ public class wordle_final {
 				return results;
 			}
 			
-            public static void makeGrid(String guess, String secretWord, String grid[][], int i){
+    public static void makeGrid(String guess, String secretWord, String grid[][], int i){
 
-                String[] colorCoded = checkWord(guess, secretWord);
-			    grid[i] = colorCoded;    		
-			    for(int j = 0; j < 6; j++) {
-			        for(int k = 0; k < 5; k++) {
-			        	System.out.print(grid[j][k]);
-			        }
-			        System.out.println("");
-			    }
-			    System.out.println("");
-            }
+        String[] colorCoded = checkWord(guess, secretWord);
+		grid[i] = colorCoded;    		
+		for(int j = 0; j < 6; j++) {
+			for(int k = 0; k < 5; k++) {
+			    System.out.print(grid[j][k]);
+			}
+			System.out.println("");
+		}
+		System.out.println("");
+    }
 }
