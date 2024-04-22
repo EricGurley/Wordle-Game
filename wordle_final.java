@@ -67,12 +67,12 @@ public class wordle_final {
 			secretWord = secretWord.toUpperCase();
 		        	
 			if (difficultyResponse.equals("easy")) {
-			    System.out.println(RandomLetter(secretWord, 1)); //prints 2 random letters in the correct spaces as a hint to user for easy difficulty level
+			    System.out.println(randomLetter(secretWord, 1)); //prints 2 random letters in the correct spaces as a hint to user for easy difficulty level
 		    }
 
 		    // If the input is no, it moves on to the next if statement, which ends the while loop
 			else if (difficultyResponse.equals("medium")) {
-		        System.out.println(RandomLetter(secretWord, 0)); //prints a random letter in the correct space as hint to user for medium difficulty level
+		        System.out.println(randomLetter(secretWord, 0)); //prints a random letter in the correct space as hint to user for medium difficulty level
 		    }
 
 		    // If the input is either yes or no, then the input is valid and the while loop ends
@@ -116,7 +116,7 @@ public class wordle_final {
 		}
 		input.close();
 	}
-		public static String RandomLetter(String word, int numOfRevealedLetters) { //parameters are secret word and  number of revealed letters corresponding to difficulty level
+		public static String randomLetter(String word, int numOfRevealedLetters) { //parameters are secret word and  number of revealed letters corresponding to difficulty level
 			Random random = new Random(5); //seed value is 5 to ensure same sequence of each playthrough is consistent
 			int wordLength = word.length();
 //			if (wordLength == 0) {
@@ -258,4 +258,5 @@ public class wordle_final {
 			    }
 			    System.out.println("");
             }
+}
 }
